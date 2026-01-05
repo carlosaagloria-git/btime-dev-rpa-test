@@ -1,4 +1,3 @@
-
 # Projeto BTime - Monitoramento de Moedas
 
 ## Visão Geral
@@ -54,73 +53,68 @@ btime/
 
 ## Como Executar
 
-Como Executar
-
 Siga os passos abaixo para executar a aplicação na sua máquina Windows:
 
-Clonar o repositório
+### 1. Clonar o repositório
 
-Abra o Prompt de Comando (CMD) e navegue até a pasta onde deseja salvar o projeto, por exemplo C:\Users\SeuUsuario\Downloads:
-
+```cmd
 cd C:\Users\SeuUsuario\Downloads
 git clone https://github.com/carlosaagloria-git/btime-dev-rpa-test.git
+```
 
+### 2. Entrar na pasta do projeto
 
-Isso vai criar uma pasta chamada btime-dev-rpa-test com todos os arquivos do projeto.
-
-Entrar na pasta do projeto
-
+```cmd
 cd btime-dev-rpa-test
+```
 
+### 3. Criar e ativar ambiente virtual (opcional, mas recomendado)
 
-Criar e ativar ambiente virtual (opcional, mas recomendado)
-
-Se você tiver Python instalado, crie um ambiente virtual para não misturar bibliotecas com outros projetos:
-
+```cmd
 python -m venv venv
 venv\Scripts\activate
+```
 
+### 4. Instalar dependências
 
-Você verá que o prompt vai mudar, mostrando (venv) no início.
-
-Instalar dependências
-
-Caso o projeto use bibliotecas externas (como requests), instale com:
-
+```cmd
 pip install -r requirements.txt
+```
 
+Se não houver `requirements.txt`, crie com:
 
-Se ainda não existir o requirements.txt, você pode criar e adicionar:
-
+```
 requests
+```
 
+### 5. Executar a aplicação
 
-Executar a aplicação
+Via API (dados da AwesomeAPI):
 
-Existem duas formas de rodar o monitoramento:
-
-Via API (coleta dados da AwesomeAPI):
-
+```cmd
 python api_app.py
-
+```
 
 Via Scraping (HTML da AwesomeAPI):
 
+```cmd
 python scraping_app.py
+```
 
+### 6. Verificar os arquivos gerados
 
-Verificar os arquivos gerados
+Os CSVs serão criados na pasta `moedas/data` (ou `data`) com o layout atualizado:
 
-O sistema cria os CSVs dentro da pasta moedas/data (ou data, conforme seu ajuste), com o layout atualizado:
-
+```
 moeda;valor;data;hora;fonte
 USD-BRL;5.4216;2026-01-02;23:43:50;API_HTML
 EUR-BRL;6.35324;2026-01-02;23:43:50;API_HTML
+```
 
+### 7. Encerrar o monitoramento
 
-Encerrar o monitoramento
+Pressione **CTRL + C** no CMD para interromper o monitoramento contínuo.
 
-Basta pressionar CTRL + C no CMD para parar a execução do monitoramento contínuo.
 ---
 
 ## Boas Práticas
@@ -137,3 +131,4 @@ Basta pressionar CTRL + C no CMD para parar a execução do monitoramento contí
 Carlos A. Gloria  
 [GitHub](https://github.com/carlosaagloria-git)  
 E-mail: carlos@email.com
+
