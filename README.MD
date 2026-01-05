@@ -54,35 +54,73 @@ btime/
 
 ## Como Executar
 
-1. Clone o repositório:
-```bash
+Como Executar
+
+Siga os passos abaixo para executar a aplicação na sua máquina Windows:
+
+Clonar o repositório
+
+Abra o Prompt de Comando (CMD) e navegue até a pasta onde deseja salvar o projeto, por exemplo C:\Users\SeuUsuario\Downloads:
+
+cd C:\Users\SeuUsuario\Downloads
 git clone https://github.com/carlosaagloria-git/btime-dev-rpa-test.git
-```
 
-2. Navegue até a pasta do projeto:
-```bash
-cd btime
-```
 
-3. Instale as dependências necessárias (caso ainda não tenha o `requests`):
-```bash
-pip install requests
-```
+Isso vai criar uma pasta chamada btime-dev-rpa-test com todos os arquivos do projeto.
 
-4. Execute a coleta via API:
-```bash
+Entrar na pasta do projeto
+
+cd btime-dev-rpa-test
+
+
+Criar e ativar ambiente virtual (opcional, mas recomendado)
+
+Se você tiver Python instalado, crie um ambiente virtual para não misturar bibliotecas com outros projetos:
+
+python -m venv venv
+venv\Scripts\activate
+
+
+Você verá que o prompt vai mudar, mostrando (venv) no início.
+
+Instalar dependências
+
+Caso o projeto use bibliotecas externas (como requests), instale com:
+
+pip install -r requirements.txt
+
+
+Se ainda não existir o requirements.txt, você pode criar e adicionar:
+
+requests
+
+
+Executar a aplicação
+
+Existem duas formas de rodar o monitoramento:
+
+Via API (coleta dados da AwesomeAPI):
+
 python api_app.py
-```
 
-5. Execute a coleta via scraping HTML:
-```bash
+
+Via Scraping (HTML da AwesomeAPI):
+
 python scraping_app.py
-```
 
-6. Os arquivos CSV serão atualizados automaticamente na pasta do projeto:
-- `moedas_api.csv`
-- `moedas_scraping.csv`
 
+Verificar os arquivos gerados
+
+O sistema cria os CSVs dentro da pasta moedas/data (ou data, conforme seu ajuste), com o layout atualizado:
+
+moeda;valor;data;hora;fonte
+USD-BRL;5.4216;2026-01-02;23:43:50;API_HTML
+EUR-BRL;6.35324;2026-01-02;23:43:50;API_HTML
+
+
+Encerrar o monitoramento
+
+Basta pressionar CTRL + C no CMD para parar a execução do monitoramento contínuo.
 ---
 
 ## Boas Práticas
